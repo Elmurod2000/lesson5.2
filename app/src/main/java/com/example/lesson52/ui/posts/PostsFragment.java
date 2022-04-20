@@ -70,6 +70,7 @@ public class PostsFragment extends Fragment {
             @Override
             public void onLongClick(int pos) {
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(requireContext());
+                alertDialog.setMessage("Вы точно хотите удалить? ");
                 alertDialog.setPositiveButton("yes", (dialogInterface, i)
                         -> App.api.deletePost(adapter.getItem(pos).getId()).enqueue(new Callback<Post>() {
                     @Override
